@@ -1,17 +1,21 @@
 public class Main {
     public static void main(String[] args) {
         int ticketPrice = 200;
+        int bonusRub = 20;
         int bonusMiles;
-        int ostatok = ticketPrice % 20;
 
-        if  (ostatok == 0) {
-            bonusMiles = ticketPrice / 20;
-            System.out.println("Вам начислено " + bonusMiles + " бонусных милей.");
+        if (ticketPrice >= 0) {
 
+            if (ticketPrice % bonusRub == 0) {
+                bonusMiles = ticketPrice / bonusRub;
+                System.out.println("Вам начислено " + bonusMiles + " бонусных милей.");
+
+            } else {
+                System.out.println("Поставьте стоимость билета кратным " + bonusRub);
+            }
         } else {
-            System.out.println("Поставьте стоимость билета кратным 20");
+            System.out.println("Введите стоимость билета больше 0");
         }
-
 
     }
 }
